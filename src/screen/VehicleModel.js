@@ -24,7 +24,7 @@ const data = [{
   value: 'Pear',
 }];
 console.log( DateTimePickerModal)
-class DetailsScreen extends Component {
+class VehicleModel extends Component {
 
   constructor(props) {
     super(props)
@@ -64,8 +64,16 @@ class DetailsScreen extends Component {
   render() {
     return (
       <View style={styles.container}>
+        <Dropdown containerStyle={styles.input}
+          label='Vehicle Name'
+          data={data}
+        />
+        <Dropdown containerStyle={styles.input}
+          label='Vehicle Type'
+          data={data}
+        />
         <TextInput
-            placeholder="Vehicle Name"
+            placeholder="Vehicle Model"
             placeholderTextColor="#666666"
             onChangeText={(text) => this.handleChange({prop:'name', value:text})}
             style={styles.input}
@@ -113,4 +121,4 @@ const mapStateToProps = state => {
       state: state.vehicle,
     }
 }
-export default connect(mapStateToProps, {})(DetailsScreen);
+export default connect(mapStateToProps, {})(VehicleModel);

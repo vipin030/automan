@@ -1,21 +1,38 @@
-import { NavigationActions } from 'react-navigation';
+// import { NavigationActions } from 'react-navigation';
+//
+// let _navigator;
+//
+// function setTopLevelNavigator(navigatorRef) {
+//   _navigator = navigatorRef;
+// }
+//
+// function navigate(routeName, params) {
+//   console.log("U are in navigation service")
+//   _navigator.dispatch(
+//     NavigationActions.navigate({
+//       routeName,
+//       params,
+//     }),
+//   );
+//   console.log("U are in navigation service done")
+// }
+//
+// export const navigationService = {
+//   navigate,
+//   setTopLevelNavigator,
+// };
 
-let _navigator;
+import * as React from 'react';
 
-function setTopLevelNavigator(navigatorRef) {
-  _navigator = navigatorRef;
-}
+const navigationRef = React.createRef();
 
-function navigate(routeName, params) {
-  _navigator.dispatch(
-    NavigationActions.navigate({
-      routeName,
-      params,
-    }),
-  );
+function navigate(name, params) {
+  console.log("U are in navigation service started")
+  navigationRef.current?.navigate(name, params);
+  console.log("U are in navigation service done")
 }
 
 export const navigationService = {
   navigate,
-  setTopLevelNavigator,
+  navigationRef
 };

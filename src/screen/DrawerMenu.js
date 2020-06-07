@@ -93,6 +93,28 @@ export function DrawerMenu(props) {
                         <DrawerItem
                             icon={({color, size}) => (
                                 <Icon
+                                name="taxi"
+                                color={color}
+                                size={size}
+                                />
+                            )}
+                            label="Type"
+                            onPress={() => {props.navigation.navigate('SettingScreen')}}
+                        />
+                        <DrawerItem
+                            icon={({color, size}) => (
+                                <Icon
+                                name="taxi"
+                                color={color}
+                                size={size}
+                                />
+                            )}
+                            label="Model"
+                            onPress={() => {props.navigation.navigate('SettingScreen')}}
+                        />
+                        <DrawerItem
+                            icon={({color, size}) => (
+                                <Icon
                                 name="settings-outline"
                                 color={color}
                                 size={size}

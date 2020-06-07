@@ -4,14 +4,15 @@ import { createStackNavigator } from '@react-navigation/stack';
 
 import SplashScreen from './SplashScreen';
 import LoginScreen from './LoginScreen';
-//import SignUpScreen from './SignUpScreen';
+import SignUpScreen from './SignUpScreen';
 
 const RootStack = createStackNavigator();
 
 const AuthStackNavigator = ({navigation}) => (
     <RootStack.Navigator headerMode='none'>
         <RootStack.Screen name="SplashScreen" component={SplashScreen}/>
-        <RootStack.Screen name="SignInScreen" component={SignInScreen}/>
+        <RootStack.Screen name="SignInScreen" component={LoginScreen}/>
+        <RootStack.Screen name="SignUpScreen" component={SignUpScreen} />
     </RootStack.Navigator>
 );
 

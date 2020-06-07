@@ -14,7 +14,7 @@ import DateTimePickerModal from "react-native-modal-datetime-picker";
 
 import moment from 'moment';
 
-class ExploreScreen extends Component {
+class Purchase extends Component {
 
   constructor(props) {
     super(props)
@@ -59,10 +59,24 @@ class ExploreScreen extends Component {
     }];
     return (
       <View style={styles.container}>
-        <Text>Sell Vehicle</Text>
+        <Text>Purchase Screen</Text>
         <Dropdown containerStyle={styles.input}
-        label='Purchase'
+        label='Vehicle Name'
         data={data}
+        />
+        <Dropdown containerStyle={styles.input}
+        label='Vehicle Type'
+        data={data}
+        />
+        <Dropdown containerStyle={styles.input}
+        label='Vehicle Model'
+        data={data}
+        />
+        <TextInput
+            placeholder="Color"
+            placeholderTextColor="#666666"
+            onChangeText={(text) => this.handleChange({prop:'name', value:text})}
+            style={styles.input}
         />
         <TextInput
             placeholder="Price"
@@ -70,7 +84,7 @@ class ExploreScreen extends Component {
             onChangeText={(text) => this.handleChange({prop:'name', value:text})}
             style={styles.input}
         />
-        <TextInput style={styles.input} placeholder="Sold At" value={this.state.puchase_at ? moment(this.state.puchase_at).format('YYYY-MM-DD') : ''} onFocus={this.showDatePicker} />
+        <TextInput style={styles.input} placeholder="Purchase At" value={this.state.puchase_at ? moment(this.state.puchase_at).format('YYYY-MM-DD') : ''} onFocus={this.showDatePicker} />
         <DateTimePickerModal
         date={this.state.puchase_at ? new Date(this.state.puchase_at) : new Date()}
         isVisible={this.state.show}
@@ -79,7 +93,7 @@ class ExploreScreen extends Component {
         onCancel={this.hideDatePicker}
         />
         <TextInput
-            placeholder="Buyer Name"
+            placeholder="Seller Name"
             placeholderTextColor="#666666"
             onChangeText={(text) => this.handleChange({prop:'name', value:text})}
             style={styles.input}
@@ -102,7 +116,7 @@ class ExploreScreen extends Component {
   }
 };
 
-export default ExploreScreen;
+export default Purchase;
 
 const DEVICE_WIDTH = Dimensions.get('window').width;
 const DEVICE_HEIGHT = Dimensions.get('window').height;

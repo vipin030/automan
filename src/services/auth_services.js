@@ -5,7 +5,7 @@ const { manifest } = Constants;
 
 const api = (typeof manifest.packagerOpts === `object`) && manifest.packagerOpts.dev
   ? manifest.debuggerHost.split(`:`).shift().concat(`:8000`)
-  : `192.168.0.103:8000`;
+  : `192.168.1.178:8000`;
 console.log("Api ",api)
 export const userService = {
     get,

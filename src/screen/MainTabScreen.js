@@ -9,6 +9,7 @@ import HomeScreen from './HomeScreen';
 import DetailsScreen from './DetailsScreen';
 import ExploreScreen from './ExploreScreen';
 import ProfileScreen from './ProfileScreen';
+import Purchase from './Purchase';
 
 const HomeStack = createStackNavigator();
 const DetailsStack = createStackNavigator();
@@ -36,18 +37,18 @@ const MainTabScreen = () => (
         component={DetailsStackScreen}
         options={{
           tabBarLabel: 'Updates',
-          tabBarColor: '#1f65ff',
+          tabBarColor: '#009387',
           tabBarIcon: ({ color }) => (
             <Icon name="ios-notifications" color={color} size={26} />
           ),
         }}
       />
       <Tab.Screen
-        name="Profile"
-        component={ProfileScreen}
+        name="Purchase"
+        component={Purchase}
         options={{
-          tabBarLabel: 'Profile',
-          tabBarColor: '#694fad',
+          tabBarLabel: 'Purchase',
+          tabBarColor: '#009387',
           tabBarIcon: ({ color }) => (
             <Icon name="ios-person" color={color} size={26} />
           ),
@@ -58,7 +59,7 @@ const MainTabScreen = () => (
         component={ExploreScreen}
         options={{
           tabBarLabel: 'Explore',
-          tabBarColor: '#d02860',
+          tabBarColor: '#009387',
           tabBarIcon: ({ color }) => (
             <Icon name="ios-aperture" color={color} size={26} />
           ),
@@ -105,4 +106,3 @@ const DetailsStackScreen = ({navigation}) => (
         }} />
 </DetailsStack.Navigator>
 );
-  

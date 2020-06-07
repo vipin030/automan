@@ -22,7 +22,6 @@ const styles = {
   },
   container: {
     marginTop: 30,
-    fontSize: 20,
   },
   textStyle: {
     color: '#0000ff',
